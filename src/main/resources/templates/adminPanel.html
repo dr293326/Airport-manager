@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www/thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airport Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+					<div class="main-title">Admin Panel</div>
+					<div>
+					
+						<div class="button-div">
+							<div class="button-div-child">
+								<button onclick="document.location='/employees'" class="login-button" type="button">Employees</button>
+							</div>
+						</div>
+						
+						<div class="button-div">
+							<div class="button-div-child">
+								<button onclick="document.location='/airplanes'" class="login-button" type="button">Airplanes</button>
+							</div>
+						</div>
+						
+						<div class="button-div">
+							<div class="button-div-child">
+								<button onclick="document.location='/flights'" class="login-button" type="button">Flights</button>
+							</div>
+						</div>
+						
+						<div class="button-div">
+							<div class="button-div-child">
+								<button onclick="document.location='/tickets'" class="login-button" type="button">Tickets</button>
+							</div>
+						</div>
+						
+						<div class="button-div">
+							<div class="button-div-child">
+								<button onclick="document.location='/logout'" class="login-button" type="button">Log out</button>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Table -->
+					<!-- 
+					<table> 
+						
+						
+						<thead> 
+							<tr class="table100-head"> 
+								<th class="column1">ID</th>
+								<th class="column2">IMIE</th>
+								<th class="column3">NAZWISKO</th>
+								<th class="column4">PLEC</th>
+								<th class="column5">PESEL</th>
+							</tr>
+						</thead>
+						
+						
+						<tbody>
+							<tr th:each="employee : ${employeeList}" > 
+								<td class="column1" th:text = ${employee.id_pracownika}>ID</td>
+								<td class="column2" th:text = ${employee.imie}>IMIE</td>
+								<td class="column3" th:text = ${employee.nazwisko}>NAZIWSKO</td>
+								<td class="column4" th:text = ${employee.plec}>PLEC</td>
+								<td class="column5" th:text = ${employee.pesel}>PESEL</td>
+							</tr>	
+						</tbody>
+						
+					</table>
+					-->
+				
+		</div>
+	</div>
+	
+<!--===============================================================================================-->	
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

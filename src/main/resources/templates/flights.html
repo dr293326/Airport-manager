@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www/thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airport Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="/css/util.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100 button-container">
+				<div class="table100">
+					<!-- Table -->
+
+					<table>
+
+						<!-- Table header -->
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID</th>
+								<th class="column2">Departure date</th>
+								<th class="column3">Arrival date</th>
+								<th class="column4">International</th>
+								<th class="column5">Business class available</th>
+								
+								<th class="column8">Departure airport ID</th>
+								<th class="column9">Arrival airport ID</th>
+								
+								<th class="column6">Actions</th>
+							</tr>
+						</thead>
+
+						<!-- Table body -->
+						<tbody>
+							<tr th:each="flight : ${flightList}">
+								<td class="column1" th:text=${flight.id_lotu}>ID</td>
+								<td class="column2" th:text=${#strings.substring(flight.data_odlotu,0,10)}>IMIE</td>
+								<td class="column3" th:text=${#strings.substring(flight.data_przylotu,0,10)}>NAZIWSKO</td>
+								<td class="column4" th:text=${flight.czy_miedzynarodowy}>PLEC</td>
+								<td class="column5" th:text=${flight.czy_biznes_klasa}>PESEL</td>
+								
+								<td class="column8" th:text=${flight.id_lotniska_odlotu}></td>
+								<td class="column9" th:text=${flight.id_lotniska_przylotu}></td>
+								
+								<td class="column6">
+
+									<div class="action-buttons">
+										
+											<a th:href="@{'/editFlight/'+ ${flight.id_lotu}}" class="action-button" type="button">Edit
+											</a>
+									</div>
+									<div class="action-buttons">
+										
+											<a th:href="@{'/deleteFlight/'+ ${flight.id_lotu}}" class="action-button" type="button">Delete
+											</a>
+										
+									</div>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="button-container">
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/addFlight'" class="login-button"
+								type="button">Add new</button>
+						</div>
+					</div>
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/loginSuccess'"
+								class="login-button" type="button">Back</button>
+						</div>
+					</div>
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/logout'"
+								class="login-button" type="button">Log out</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www/thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airport Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="/css/util.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100 button-container">
+				<div class="table100">
+					<!-- Table -->
+
+					<table>
+
+						<!-- Table header -->
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID</th>
+								<th class="column2">Price</th>
+								<th class="column3">Row</th>
+								<th class="column4">Seat</th>
+								<th class="column5">Class</th>
+								<th class="column7">Window seat</th>
+								<th class="column8">Paid luggage</th>
+								<th class="column9">Flight ID</th>
+							</tr>
+						</thead>
+
+						<!-- Table body -->
+						<tbody>
+							<tr th:each="ticket : ${userTicketList}">
+								<td class="column1" th:text=${ticket.id_biletu}>ID</td>
+								<td class="column2" th:text=${ticket.cena}>IMIE</td>
+								<td class="column3" th:text=${ticket.rzad}>NAZIWSKO</td>
+								<td class="column4" th:text=${ticket.nr_miejsca}>PLEC</td>
+								<td class="column5" th:text=${#strings.capitalizeWords(ticket.klasa)}>PESEL</td>
+								<td class="column7" th:text=${ticket.czy_przy_oknie}></td>
+								<td class="column8" th:text=${ticket.czy_platny_bagaz}></td>
+								<td class="column9" th:text=${ticket.id_lotu}></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="button-container">
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/loginSuccess'"
+								class="login-button" type="button">Back</button>
+						</div>
+					</div>
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/logout'"
+								class="login-button" type="button">Log out</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

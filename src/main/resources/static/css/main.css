@@ -1,0 +1,479 @@
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: sans-serif;
+}
+
+/* ------------------------------------ */
+a {
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6 {margin: 0px;}
+
+p {margin: 0px;}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/* ------------------------------------ */
+input {
+  display: block;
+	outline: none;
+	border: none !important;
+}
+
+textarea {
+  display: block;
+  outline: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+/* ------------------------------------ */
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utiliti ]*/
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #4158d0, #c850c0);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: rgb(255, 255, 255, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+  
+}
+table tbody tr {
+  height: 50px;
+  
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+  transition: 1s;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: rgba(245, 245, 245, 0.7);
+  cursor: pointer;
+  transition: 1s;
+}
+
+.login-button{
+	font-family: OpenSans-Regular;
+	color: #fff;
+	font-size: 18px;
+	letter-spacing: 6px;
+}
+
+.button-div{
+	display:block !important;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1.5px;
+	border-radius: 20px;
+	transition: 1.2s;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.button-div:hover{
+	background-color: rgba(175, 175, 175, 0.6);
+	transition: 0.8s;
+}
+
+
+.button-div-child{
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:50px;
+	margin-right:50px;
+}
+
+.button-div-list{
+	display:inline-block;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1.5px;
+	border-radius: 20px;
+	transition: 1.2s;
+	text-align: center;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.button-div-list:hover{
+	background-color: rgba(175, 175, 175, 0.4);
+	transition: 0.8s;
+}
+
+.button-container{
+	text-align: center;
+}
+
+.action-buttons{
+	display: inline !important;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1.5px;
+	border-radius: 20px;
+	transition: 1.2s;
+	text-align: center;
+	margin-top: 10px;
+	margin-right: 8px;
+	transition: 1.2s;
+
+}
+
+.action-buttons:hover{
+	background: rgba(200, 80, 192, 0.3);
+	background: -webkit-linear-gradient(45deg, rgba(65, 88, 208, 0.3), rgba(200, 80, 192, 0.3));
+	background: -o-linear-gradient(45deg, rgba(65, 88, 208, 0.3), rgba(200, 80, 192, 0.3));
+	background: -moz-linear-gradient(45deg, rgba(65, 88, 208, 0.3), rgba(200, 80, 192, 0.3));
+	background: linear-gradient(45deg, rgba(65, 88, 208, 0.3), rgba(200, 80, 192, 0.3));
+	transition: 0.8s;
+	border-color: rgba(200, 80, 192, 0.4);
+}
+
+
+.action-button{
+	font-family: OpenSans-Regular;
+	color: #fff;
+	font-size: 18px;
+	letter-spacing: 6px;
+	margin-top:15px;
+	margin-bottom:15px;
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.action-button:hover{
+	color: #fff;
+}
+
+.main-title{
+	padding-bottom: 10px;
+	float:right;
+	text-align: center;
+	font-family: OpenSans-Regular;
+	font-size: 60px;
+	color: #fff;
+	font-weight: unset;
+	letter-spacing: 14px !important;
+	width:100%;
+	transition: 2.2s;
+}
+
+.main-title:hover{
+	color: rgba(175, 175, 175, 0.5);
+	transition: 1.8s;
+}
+
+.column1 {
+  width: 20px;
+  padding-left: 20px;
+}
+
+.column2 {
+  text-align: left;
+  width: 30px;
+}
+
+.column3 {
+  width: 20px;
+}
+
+.column4 {
+  width: 50px;
+  text-align: center;
+}
+
+.column5 {
+  width: 50px;
+  text-align: left;
+  padding-right: 22px;
+}
+
+.column6 {
+  width: 150px;
+  text-align: right;
+  padding-right: 12px;
+}
+
+.column7 {
+  width: 20px;
+  text-align: center; 
+}
+
+.column8 {
+  width: 20px;
+  text-align: center;
+}
+
+.column9 {
+  width: 20px;
+  text-align: center;
+}
+
+.column10 {
+  width: 20px;
+  text-align: center;
+}
+
+
+.input-div{
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1.5px;
+	border-radius: 20px;
+	width: 170px;
+	text-align: center;
+	background-color: white;
+}
+
+.input-div-child{
+	margin-top: 5px;
+	margin: 5px;
+}
+
+.column1-input {
+  width: 20px;
+  padding-left: 20px;
+  padding-right: 200px;
+}
+
+.column2-input {
+  text-align: right;
+  width: 30px;
+}
+
+.wrap-table100-input {
+  width: 620px;
+}
+
+@media screen and (max-width: 992px) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 37px 0;
+  }
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    font-family: OpenSans-Regular;
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+  table tbody tr td:nth-child(1):before {
+    content: "ID";
+  }
+  table tbody tr td:nth-child(2):before {
+    content: "Imie";
+  }
+  table tbody tr td:nth-child(3):before {
+    content: "Nazwisko";
+  }
+  table tbody tr td:nth-child(4):before {
+    content: "Plec";
+  }
+  table tbody tr td:nth-child(5):before {
+    content: "Pesel";
+  }
+  table tbody tr td:nth-child(7):before {
+    content: "Akcje";
+  }
+  table tbody tr td:nth-child(6):before {
+    content: "Data ur.";
+    text-align: left;
+  }
+ }
+  
+
+  .column4,
+  .column5,
+  .column6 {
+    text-align: left;
+  }
+
+  
+
+  tbody tr {
+    font-size: 14px;
+  }
+
+
+@media (max-width: 576px) {
+  .container-table100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+	.button-div-list{
+	display:block !important;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1.5px;
+	border-radius: 20px;
+	transition: 1.2s;
+	text-align: center;
+	margin-top: 15px;
+}
+}

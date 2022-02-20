@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www/thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airport Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="/css/util.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100 button-container">
+				<div class="table100">
+					<!-- Table -->
+
+					<table>
+
+						<!-- Table header -->
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID</th>
+								<th class="column2">Name</th>
+								<th class="column3">Last Name</th>
+								<th class="column4">Sex</th>
+								<th class="column5">PESEL</th>
+								<th class="column7">Birth date</th>
+								<th class="column6">Actions</th>
+							</tr>
+						</thead>
+
+						<!-- Table body -->
+						<tbody>
+							<tr th:each="employee : ${employeeList}">
+								<td class="column1" th:text=${employee.id_pracownika}>ID</td>
+								<td class="column2" th:text=${employee.imie}>Name</td>
+								<td class="column3" th:text=${employee.nazwisko}>Last name</td>
+								<td class="column4" th:text=${employee.plec}>Sex</td>
+								<td class="column5" th:text=${employee.pesel}>PESEL</td>
+								<td class="column7" th:text=${#strings.substring(employee.data_urodzenia,0,10)}></td>
+								<td class="column6">
+
+									<div class="action-buttons">
+										
+											<a th:href="@{'/editEmployee/'+ ${employee.id_pracownika}}" class="action-button" type="button">Edit
+											</a>
+									</div>
+									<div class="action-buttons">
+										
+											<a th:href="@{'/deleteEmployee/'+ ${employee.id_pracownika}}" class="action-button" type="button">Delete
+											</a>
+										
+									</div>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="button-container">
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/addEmployee'" class="login-button"
+								type="button">Add new</button>
+						</div>
+					</div>
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/loginSuccess'"
+								class="login-button" type="button">Back</button>
+						</div>
+					</div>
+
+					<div class="button-div-list">
+						<div class="button-div-child">
+							<button onclick="document.location='/logout'"
+								class="login-button" type="button">Log out</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+
+</body>
+</html>

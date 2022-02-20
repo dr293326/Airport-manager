@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www/thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Airport Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css"
+	href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="/css/util.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100-input button-container">
+				<div class="table100">
+					<!-- Table -->
+					<form action="#" th:action="@{/saveTicket}" th:objects="${ticket}"
+						method="post">
+						<table>
+							<thead>
+								<tr>
+									<td class="column1-input"></td>
+									<td class="column2-input"></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="column1-input">Price</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.cena}">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="column1-input">Row</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.rzad}">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="column1-input">Seat</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.nr_miejsca}">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="column1-input">Class</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.klasa}">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="column1-input">Window seat</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.czy_przy_oknie}">
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td class="column1-input">Paid luggage</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.czy_platny_bagaz}">
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td class="column1-input">Flight ID</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text" th:field="*{ticket.id_lotu}">
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td class="column1-input">Passenger ID</td>
+									<td class="column2-input">
+										<div class="input-div">
+											<div class="input-div-child">
+												<input type="text"
+													th:field="*{ticket.id_pasazera}">
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="button-container">
+							<div class="button-div-list">
+								<div class="button-div-child">
+									<button type="submit" class="login-button"
+										onclick="document.location='/saveTicket'">Add</button>
+								</div>
+							</div>
+
+							<div class="button-div-list">
+								<div class="button-div-child">
+									<button onclick="document.location='/tickets'"
+										class="login-button" type="button">Back</button>
+								</div>
+							</div>
+
+							<div class="button-div-list">
+								<div class="button-div-child">
+									<button onclick="document.location='/logout'"
+										class="login-button" type="button">Log out</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+
+</body>
+</html>
